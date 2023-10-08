@@ -1,0 +1,57 @@
+html , body
+{
+    height: 100%;
+}
+*
+{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#header
+{
+    display: flex;
+    justify-content: flex-end;
+    gap: 2rem;
+    background-color: rgb(250, 156, 206);
+    border-radius: 2rem;
+    padding: 2rem;
+    position: fixed;
+    top: 0 ;
+    left: 0;
+    right: 0;
+}
+#header h2
+{
+    margin-right: auto;
+}
+
+#header button
+{
+    background-color: rgb(250, 156, 206);
+    border:rgb(250, 156, 206);
+}
+
+#header button:hover
+{
+    color:white;
+}
+#header>div img
+{
+    color: white;
+}
+
+#content
+{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#content>div
+{
+
+}
