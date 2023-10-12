@@ -1,7 +1,14 @@
+:root
+{
+    --head: rgb(156, 197, 250);
+    --content: rgb(250, 156, 206);
+    --backblue: rgb(209, 215, 243);
+}
+
 html , body
 {
     height: 100%;
-    background-color: rgb(209, 215, 243);
+    background-color: var(--backblue);
 }
 *
 {
@@ -15,7 +22,7 @@ html , body
     display: flex;
     justify-content: flex-end;
     gap: 2rem;
-    background-color: rgb(250, 156, 206);
+    background-color: var(--content);
     border-radius: 2rem;
     padding: 2rem;
     position: fixed;
@@ -32,8 +39,8 @@ html , body
 
 #header button
 {
-    background-color: rgb(250, 156, 206);
-    border:rgb(250, 156, 206);
+    background-color: var(--content);
+    border: var(--content);
 }
 #header button:hover
 {
@@ -58,7 +65,7 @@ html , body
 #content>div
 {
 
-    background-color: rgb(156, 197, 250);
+    background-color: var(--head);
     text-align: center;
     border-radius: 2rem;
     padding-top: 5px;
@@ -87,7 +94,7 @@ html , body
 
 #content #schedule fieldset
 {
-    border-color: rgb(83, 180, 249);
+    border-color:  var(--head);
 }
 .pluckcard
 {
@@ -96,8 +103,8 @@ html , body
 
 #schedule button
 {
-    background-color: rgb(156, 197, 250);
-    border:rgb(156, 197, 250);
+    background-color:  var(--head);
+    border: var(--head);
 }
 
 

@@ -7,7 +7,6 @@ let contentAbout;
 
 function clickAbout()
 {
-    console.log(about);
     about.addEventListener('click' , aboutfuncs);
 }
 

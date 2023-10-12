@@ -1,6 +1,10 @@
 
 import { clickAbout} from "./about";
-import {getElements} from "./decbasicelem"
+import { clicktheme} from "./theme";
+import {getElements} from "./decbasicelem";
+
+
 
 getElements();
 clickAbout();
+clicktheme();
