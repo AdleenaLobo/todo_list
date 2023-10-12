@@ -1,6 +1,7 @@
 html , body
 {
     height: 100%;
+    background-color: rgb(209, 215, 243);
 }
 *
 {
@@ -21,22 +22,24 @@ html , body
     top: 0 ;
     left: 0;
     right: 0;
+    z-index: 2;
 }
 #header h2
 {
     margin-right: auto;
 }
 
+
 #header button
 {
     background-color: rgb(250, 156, 206);
     border:rgb(250, 156, 206);
 }
-
 #header button:hover
 {
     color:white;
 }
+
 #header>div img
 {
     color: white;
@@ -49,9 +52,65 @@ html , body
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 #content>div
 {
 
+    background-color: rgb(156, 197, 250);
+    text-align: center;
+    border-radius: 2rem;
+    padding-top: 5px;
+}
+#content .insidecontent , #content .pluckcard
+{
+    height: 300px;
+    width: 500px;
+}
+
+
+
+#aboutme>img
+{
+    border-radius: 4rem;
+}
+#content #schedule
+{
+    margin-top: 1rem;
+}
+#content #schedule button:hover
+{
+    color:white;
+}
+
+
+#content #schedule fieldset
+{
+    border-color: rgb(83, 180, 249);
+}
+.pluckcard
+{
+    position: absolute;
+}
+
+#schedule button
+{
+    background-color: rgb(156, 197, 250);
+    border:rgb(156, 197, 250);
+}
+
+
+.pluckcard .header
+{
+    margin: 1rem;   
+}
+
+#content .pluckcard .content
+{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: grey;
+    height: 50%;
 }

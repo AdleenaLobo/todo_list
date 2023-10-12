@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To-do-list</title>
-    <script src="./main.js"></script>
     <link rel="stylesheet" href="../src/style.css">
 </head>
 <body>
@@ -13,20 +12,29 @@
         <img src="../assets/list-check.svg" alt="icon for the app" height="25px" width="25px">
         </div>
         <h2>TO-DO</h2>
-        <button>Home</button>
-        <button>About</button>
-        <button>Theme</button>
+        <button id="Home">Home</button>
+        <button id="About">About</button>
+        <button id="Theme">Theme</button>
     </div>
     <div id="content">
-        <div>
-        <img src="" alt="image of a person">
-        <div>username</div>
-        <div>Discription</div>
-        <div>
-            <div>Today</div>
-            <div>This weak</div>
+        <div class="insidecontent">
+            <div id="aboutme">
+            <img src="../assets/defaultpp.jpg" alt="image of a person" height="120px" width="120px">
+            <div>@username</div>
+            <div>description</div>
         </div>
+
+        <div id="schedule">
+            <fieldset>
+                <legend>Schedule</legend>
+            <button>Today</button>
+            <br>
+            <button>This weak</button>
+        </fieldset>
+        </div>
+ 
     </div>
     </div>
+    <script src="./main.js" ></script>
 </body>
 </html>
