@@ -75,7 +75,7 @@ html , body
     border-radius: 2rem;
     padding-top: 5px;
 }
-#content .insidecontent , #content .pluckcard
+#content .insidecontent , #content .pluckcard ,#content .projects
 {
     height: 300px;
     width: 500px;
@@ -125,3 +125,49 @@ html , body
     align-items: center;
     height: 50%;
 }
+
+#content .projects
+{
+    position: absolute;
+}
+
+#content .projects div
+{
+    margin: 1rem;
+    background-color: var(--content);
+    border-radius: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding: 2px;
+    border: 1px solid white;
+}
+
+#content .projects div .bun
+{
+    margin-top: 2px;
+    margin-left: auto;
+    margin-right: 2px;
+    margin-bottom: 2px;
+    border: 1px solid var(--content);
+}
+#content .projects div input[type= "text"]
+{
+    background-color: var(--content);
+    border: 1px solid var(--content);
+}
+#content .projects div input[type= "text"]::placeholder
+{
+    color: black;
+}
+
+.bun button
+{
+    background-color: var(--content);
+    border: 1px solid var(--content);
+}
+.bun button:hover
+{
+    color: white;
+}
+

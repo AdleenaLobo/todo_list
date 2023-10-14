@@ -6,6 +6,7 @@ let theme;
 let color;
 let root;
 let todo;
+let home;
 function getElements()
 {
     
@@ -15,8 +16,9 @@ function getElements()
     color = theme.getAttribute('name');
     root = document.querySelector(':root');
     todo = document.getElementById('todo');
+    home = document.getElementById('Home');
 
 }
 
 
-export{content , about, color, theme, root, todo, getElements};
+export{content , about, color, theme, root, todo, home, getElements};
