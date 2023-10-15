@@ -37,9 +37,6 @@ function homefuns()
     clickcheck();
     clickplus();
     trackbotharray();
-    console.log("hi from home");
-    console.log("arr:"+arr);
-    console.log("checkbox:" +checkedelem);
 }
 
 function createhomeelems()

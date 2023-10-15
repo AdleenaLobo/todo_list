@@ -1,6 +1,6 @@
 import {todo} from './decbasicelem';
 import { getother , removeotherabout , removeotherhome, showtodo } from './pagetracker';
-
+import { clicktoday } from './today';
 
 function clicktodo()
 {
@@ -13,6 +13,7 @@ function calltodofuns()
     removeotherabout();
     removeotherhome();
     showtodo();
+    clicktoday();
 }
 
 

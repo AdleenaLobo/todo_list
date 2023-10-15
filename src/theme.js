@@ -4,7 +4,6 @@ import './style.css';
 
 function clicktheme()
 {
-    console.log(color);
    theme.addEventListener('click' , themefuns);
 }
 function themefuns()

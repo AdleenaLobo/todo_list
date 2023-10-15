@@ -3,7 +3,6 @@ import { addbun , arr, homefuns } from "./home";
 let index;
 function clickplus()
 {
-    console.log(addbun);
     addbun.addEventListener('click' , callplusfuns);
 }
 

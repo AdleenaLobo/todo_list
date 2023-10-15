@@ -8,6 +8,7 @@ let root;
 let todo;
 let home;
 let insidecont;
+let today;
 function getElements()
 {
     
@@ -19,8 +20,9 @@ function getElements()
     todo = document.getElementById('todo');
     home = document.getElementById('Home');
     insidecont = document.querySelector('.insidecontent');
+    today = document.getElementById('today');
 
 }
 
 
-export{content , about, color, theme, root, todo, home, getElements , insidecont};
+export{content , about, color, theme, root, todo, home, getElements , insidecont , today};
