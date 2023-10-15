@@ -1,4 +1,5 @@
 import {content, about} from './decbasicelem.js';
+import { getother, removeotherhome , hidetodo} from './pagetracker.js';
 
 
 let pulckcard;
@@ -12,6 +13,9 @@ function clickAbout()
 
 function aboutfuncs()
 {
+    getother();
+    removeotherhome();
+    hidetodo();
     createAboutElem();
     addcontentAboutElem();
     addClassAboutElem();

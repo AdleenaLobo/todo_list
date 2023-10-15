@@ -1,8 +1,10 @@
+import { trackbotharray } from './checkboxnlisttracker';
 import {buttondelete , homecont } from './home';
 import {arr} from './home';
 
 let inputelem;
 let a;
+let index;
 function clickdeletebun()
 {
     for(let i = 0 ; i < buttondelete.length ; i++)
@@ -13,7 +15,8 @@ function clickdeletebun()
 
 function calldeletefuns()
 {
-    deletefromarr.call(this)
+    deletefromarr.call(this);
+    trackbotharray();
     deleteelem();
 }
 
@@ -25,6 +28,7 @@ function deletefromarr()
     {
         if (a == arr[i])
         {
+            index = i;
             arr.splice(i , 1);
         }
     }
@@ -37,4 +41,4 @@ function deleteelem()
     console.log(arr);
 }
 
-export{clickdeletebun};
+export{clickdeletebun , index};

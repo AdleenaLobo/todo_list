@@ -7,6 +7,7 @@ let color;
 let root;
 let todo;
 let home;
+let insidecont;
 function getElements()
 {
     
@@ -17,8 +18,9 @@ function getElements()
     root = document.querySelector(':root');
     todo = document.getElementById('todo');
     home = document.getElementById('Home');
+    insidecont = document.querySelector('.insidecontent');
 
 }
 
 
-export{content , about, color, theme, root, todo, home, getElements};
+export{content , about, color, theme, root, todo, home, getElements , insidecont};

@@ -77,8 +77,8 @@ html , body
 }
 #content .insidecontent , #content .pluckcard ,#content .projects
 {
-    height: 300px;
-    width: 500px;
+    min-height: 300px;
+    min-width: 500px;
 }
 
 
@@ -129,6 +129,11 @@ html , body
 #content .projects
 {
     position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    min-width: 50%;
+    max-width: 75%;
 }
 
 #content .projects div
@@ -171,3 +176,17 @@ html , body
     color: white;
 }
 
+#content .projects .homeHeader .plus
+{
+    margin: 1rem;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 2rem;
+    font-size: large;
+    background-color: var(--head);
+}
+
+#content .projects .homeHeader .plus:hover
+{
+    color: white;
+}

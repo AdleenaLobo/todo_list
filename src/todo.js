@@ -1,6 +1,7 @@
-import {content, todo} from './decbasicelem';
+import {todo} from './decbasicelem';
+import { getother , removeotherabout , removeotherhome, showtodo } from './pagetracker';
 
-let tempabout;
+
 function clicktodo()
 {
     todo.addEventListener('click' , calltodofuns);
@@ -9,23 +10,10 @@ function clicktodo()
 function calltodofuns()
 {
     getother();
-    removeother();
-    console.log("inside to do");
+    removeotherabout();
+    removeotherhome();
+    showtodo();
 }
-function getother()
-{
-    tempabout = document.querySelector('.pluckcard');
-}
-function removeother()
-{
-    if(tempabout == undefined)
-    {
-        console.log('not there');
-    }
-    else
-    {
-        content.removeChild(tempabout);
-    }
-}
+
 
 export {clicktodo};
