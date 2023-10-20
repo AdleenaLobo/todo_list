@@ -1,10 +1,12 @@
 import {content, about} from './decbasicelem.js';
-import { getother, removeotherhome , hidetodo} from './pagetracker.js';
+import { getother , hidetodo, hidehome, showabout} from './pagetracker.js';
 
 
 let pulckcard;
 let headingAbout;
 let contentAbout;
+let tempabout;
+let temphome;
 
 function clickAbout()
 {
@@ -13,13 +15,35 @@ function clickAbout()
 
 function aboutfuncs()
 {
-    getother();
-    removeotherhome();
-    hidetodo();
-    createAboutElem();
-    addcontentAboutElem();
-    addClassAboutElem();
-    addAboutElem();
+    tempabout = document.querySelector('.pluckcard');
+    temphome = document.querySelector('.projects');
+    if(tempabout == null || tempabout == undefined )
+    {
+        
+        if(temphome != null || temphome != undefined)
+        {
+            getother();
+            hidehome();
+        }
+
+        hidetodo();
+        createAboutElem();
+        addcontentAboutElem();
+        addClassAboutElem();
+        addAboutElem();
+
+    }
+    else
+    {        
+        if(temphome != null  || temphome != undefined)
+        {
+            getother();
+            hidehome();
+        }
+        hidetodo();
+        showabout();
+    }
+
 }
 function createAboutElem()
 {

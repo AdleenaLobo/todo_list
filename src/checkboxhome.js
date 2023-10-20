@@ -1,7 +1,10 @@
-import { inputelem , checkedelem } from "./home";
+import { trackbotharray } from "./checkboxnlisttracker";
+import {checkedelem } from "./home";
 
+let inputelem;
 function clickcheck()
 {
+    inputelem = Array.from(document.querySelectorAll('input[type="checkbox"]'));
     for(let i = 0 ; i <inputelem.length ; i++)
     {
     inputelem[i].addEventListener('change' , callcheckfuns );
@@ -12,6 +15,7 @@ function callcheckfuns()
 {
     changeattribute.call(this);
     changearr.call(this);
+    trackbotharray();
 }
 
 function changeattribute()
@@ -30,7 +34,7 @@ function changeattribute()
 function changearr()
 {
     let index= inputelem.indexOf(this);
-    if(this.getAttribute('checked') == null)
+    if(checkedelem[index] == 'checked')
     {
         checkedelem[index] = '';
     }
@@ -38,6 +42,7 @@ function changearr()
     {
         checkedelem[index] = 'checked';
     }
+    localStorage.setItem('checkedElem' , checkedelem);
 }
 
 export{clickcheck};

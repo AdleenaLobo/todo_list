@@ -1,10 +1,13 @@
-import { buttonedit, arr } from "./home";
+import { arr, saved , increment } from "./home";
 
 let inputelem;
 let oldarrelem;
 let newarrelem;
+let index;
+let buttonedit;
 function calledit ()
 {
+    buttonedit = Array.from(document.getElementsByClassName('edit'));
     for(let i = 0 ; i<buttonedit.length ; i++)
     {
     buttonedit[i].addEventListener('click' , calleditfuns);
@@ -36,6 +39,7 @@ function callediting()
 {
     editattri.call(this);
     editarr();
+    saveinls();
 }
 
 function editattri()
@@ -49,9 +53,20 @@ function editarr()
     {
         if (oldarrelem == arr[i])
         {
+            index = i;
             arr[i] = newarrelem;
         }
     }
+}
+
+function saveinls()
+{
+    console.log(saved);
+    console.log(arr);
+    localStorage.setItem(saved[index] ,(arr[index]) );
+    localStorage.setItem('increment' , increment);
+    
+    
 }
 
 export{calledit};

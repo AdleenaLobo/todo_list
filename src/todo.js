@@ -1,6 +1,7 @@
 import {todo} from './decbasicelem';
-import { getother , removeotherabout , removeotherhome, showtodo } from './pagetracker';
+import { getother , hideabout, hidehome, showtodo } from './pagetracker';
 import { clicktoday } from './today';
+
 
 function clicktodo()
 {
@@ -9,9 +10,19 @@ function clicktodo()
 
 function calltodofuns()
 {
+    let temphome = document.querySelector('.projects');
+let tempabout = document.querySelector('.pluckcard');
     getother();
-    removeotherabout();
-    removeotherhome();
+    if(temphome != null)
+    {
+        console.log('hi');
+        hidehome();
+    }
+    if(tempabout != null)
+    {
+        hideabout();
+    }
+
     showtodo();
     clicktoday();
 }

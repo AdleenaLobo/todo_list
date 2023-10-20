@@ -1,29 +1,29 @@
-import {content , insidecont} from './decbasicelem';
+import { insidecont} from './decbasicelem';
 
 let tempabout;
 let temphome;
 function getother()
 {
     tempabout = document.querySelector('.pluckcard');
-    temphome =Array.from( document.querySelectorAll('.projects'));
+    temphome =document.querySelector('.projects');
 }
-function removeotherabout()
+function hideabout()
 {
-    if(tempabout != undefined)
-    {
-        content.removeChild(tempabout);
-    }
+  tempabout.style.visibility = "hidden";
 }
 
-function removeotherhome()
+function showabout()
 {
-    if(temphome != undefined)
-    {
-        for(let i = 0 ; i<temphome.length ; i++)
-        {
-        content.removeChild(temphome[i]);
-        }
-    }
+    tempabout.style.visibility = "visible";
+}
+
+function hidehome()
+{
+    temphome.style.visibility ="hidden";
+}
+function showhome()
+{
+    temphome.style.visibility ="visible";
 }
 function hidetodo()
 {
@@ -35,5 +35,5 @@ function showtodo()
     insidecont.style.visibility = "visible";
 }
 
-export {getother , removeotherabout ,removeotherhome , hidetodo ,showtodo };
+export {getother , hideabout, showabout ,hidehome , showhome , hidetodo ,showtodo };
 

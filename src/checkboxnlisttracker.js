@@ -10,11 +10,16 @@ function trackbotharray()
         {
             checkedelem.splice(index , 1);
         }
-        else if(arr.length > checkedelem.length)
-        {
-            checkedelem.push('');
-        }
     }
+        
+        while(checkedelem.length != arr.length)
+        {
+                checkedelem.push(" ");
+
+        }
+
+    
+    localStorage.setItem('checkedElem' ,checkedelem );
 }
 
 export {trackbotharray};
