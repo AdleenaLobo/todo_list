@@ -3,7 +3,6 @@ import { clickdeletebun } from "./deletehomebun";
 import { calledit} from "./edithomebun";
 import { clickcheck } from "./checkboxhome";
 import { getother , hidetodo, showhome, hideabout } from "./pagetracker";
-import { trackbotharray } from "./checkboxnlisttracker";
 import { clickplus } from "./plusbun";
 
 let homecont;
@@ -13,6 +12,7 @@ let arr= [];
 let a = [];
 let checkedelem = [];
 let saved=[];
+let duedates=[];
 let temphome;
 let tempabout;
 let index;
@@ -87,7 +87,7 @@ function startingpopulatearr()
    
     for(let key in temp)
     {
-        if(key != 'checkedElem' && key != 'increment')
+        if(key != 'checkedElem' && key != 'increment' && key != 'duedates')
         {
             saved[iterator] = key;
             arr[iterator] = localStorage.getItem(saved[iterator]);
@@ -102,6 +102,11 @@ function startingpopulatearr()
             tempa= localStorage.getItem(key);
             
             checkedelem = tempa.split(',');
+        }
+        else if(key == 'duedates')
+        {
+            tempa = localStorage.getItem(key);
+            duedates = tempa.split(',');
         }
     }
     if (increment == undefined)
@@ -118,7 +123,8 @@ function addstartingcontenthome()
     {
         arr[i]=arr[i].replace(/['|"]+/g , "");
         console.log("in : "+ checkedelem[i]+ " : yes");
-        a[i].innerHTML = `<input type="checkbox" ${checkedelem[i]}></input> <input type="text" placeholder = "${arr[i]}" disabled></imput><div class="bun"><button class="edit">edit</button> <button class="delete">delete</button></div>`;
+        duedates[i] = duedates[i].replace(/['|"|\\|\/|\[|\]]+/g, "");
+        a[i].innerHTML = `<input type="checkbox" ${checkedelem[i]}></input> <input type="text" placeholder = "${arr[i]}" disabled></imput><div class="bun"><div class="duedate">DueDate: ${duedates[i]}</div><button class="edit">edit</button> <button class="delete">delete</button></div>`;
       
     }
 }
@@ -147,14 +153,14 @@ function createmorediv()
     index = a.length;
     a[index]= document.createElement("div");
 }
-function addcontentomore()
+function addcontentomore(duedate)
 {
     console.log(index);
-   a[index].innerHTML=  `<input type="checkbox" ${checkedelem[index]}></input> <input type="text" placeholder = "${arr[index]}" disabled></imput><div class="bun"><button class="edit">edit</button> <button class="delete">delete</button></div>`;
+   a[index].innerHTML=  `<input type="checkbox" ${checkedelem[index]}></input> <input type="text" placeholder = "${arr[index]}" disabled></input><div class="bun"><div class="duedate">DueDate: ${duedate}</div><button class="edit">edit</button> <button class="delete">delete</button></div>`;
 }
 
 function appendcontent()
 {
     homecont.appendChild(a[index]);
 }
-export {increment ,a ,saved, clickedHome , arr , homecont , checkedelem , addbun, homefuns, createmorediv ,addcontentomore , appendcontent };
+export {increment ,a ,duedates,saved, clickedHome , arr , homecont , checkedelem , addbun, homefuns, createmorediv ,addcontentomore , appendcontent };

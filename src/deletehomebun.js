@@ -1,5 +1,5 @@
 import { trackbotharray } from './checkboxnlisttracker';
-import { homecont , saved , a, increment} from './home';
+import { homecont , saved , a, increment, duedates} from './home';
 import {arr} from './home';
 
 let inputelem;
@@ -37,8 +37,11 @@ function deletefromarr()
             localStorage.removeItem(saved[i]);
             saved.splice(i ,1);
             a.splice(i , 1);
+            duedates.splice(i , 1);
+            localStorage.setItem('duedates' , duedates);
             console.log(arr);
             console.log(saved);
+            console.log(duedates);
         }
     }
 

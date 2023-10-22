@@ -1,12 +1,13 @@
-import { addbun , addcontentomore, arr, createmorediv, appendcontent , saved ,increment, checkedelem } from "./home";
+import { addbun , addcontentomore, arr, createmorediv, appendcontent , saved ,increment, duedates } from "./home";
 import { calledit } from "./edithomebun";
 import { clickcheck } from "./checkboxhome";
 import { clickdeletebun } from "./deletehomebun";
-import {trackbotharray} from "./checkboxnlisttracker"
+import {trackbotharray} from "./checkboxnlisttracker";
+import {addDays, format, startOfDay} from 'date-fns';
 
 
 let index;
-let a;
+
 function clickplus()
 {
     addbun.addEventListener('click' , callplusfuns);
@@ -17,7 +18,9 @@ function callplusfuns()
     addinarray();
     trackbotharray();
     createmorediv();
-    addcontentomore();
+    let duedate = duedatecalc();
+    adddateinarray(duedate);
+    addcontentomore(duedate);
     appendcontent();
     calledit();
     clickdeletebun();
@@ -36,6 +39,23 @@ function addinarray()
     localStorage.setItem('increment' , increment);
     localStorage.setItem(saved[index], arr[index]);
 }
+function duedatecalc()
+{
+    let date;
+    let duedate;
+    date = new Date();
+    duedate = addDays(date , 1);
+    duedate = format(startOfDay(duedate), "dd.mm.yyyy");
+    console.log("duedate is: "+ duedate);
+    return duedate;
+}
+
+function adddateinarray(duedate)
+{   console.log(duedate);
+    duedates[index] = duedate;
+    localStorage.setItem('duedates', JSON.stringify(duedates));
+}
+
 
 
 export {clickplus};
