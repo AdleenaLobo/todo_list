@@ -42,9 +42,9 @@ function themechangecolor()
    }
    else
    {
-    root.style.setProperty('--head' , 'rgb(156, 197, 250)');
+    root.style.setProperty('--head' , 'rgb(0,0,63)');
     root.style.setProperty('--backblue' , 'rgb(209, 215, 243)');
-    root.style.setProperty('--content' , 'rgb(250, 156, 206)');
+    root.style.setProperty('--content' , 'rgb(0,0,63)');
    }
 }
 
